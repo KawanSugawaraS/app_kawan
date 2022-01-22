@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="Jugar memorama en línea">
+    <title>Memorama</title>
+    <link href="/static/css/memoria2.css" rel="stylesheet">
+    <link href="/static/css/memoria.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ url_for('home') }}">Juegos Web</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="btn btn-outline-success" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-success" href="{{ url_for('about') }}">Juegos</a>
+                <li class="nav-item">
+                    <a class="btn btn-outline-success" href="{{ url_for('contact') }}" role="button">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="container-fluid" id="app">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center">Juego de memorama</h1>
+                    <p>
+                        <span class="h5">Intentos: </span>
+                        {{intentos}}/{{MAXIMOS_INTENTOS}}&nbsp;<span class="h5">Aciertos:
+                        </span> {{aciertos}}
+                        <br><a @click="mostrarCreditos" href="#">Acerca de</a>
+                    </p>
+                </div>
+            </div>
+            <div v-for="(fila, indiceFila) in memorama" :key="indiceFila" class="row">
+                <div :key="indiceFila+''+indiceImagen" class="col-3" v-for="(imagen, indiceImagen) in fila">
+                    <div class="mb-3">
+                        <img @click="voltear(indiceFila, indiceImagen)" :class="{'girar': imagen.mostrar}" :src="(imagen.mostrar ? imagen.ruta :
+                                NOMBRE_IMAGEN_OCULTA)" class="card-img-top img-fluid
+                                img-thumbnail">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="container">
+            <script src="/static/js/memoria3.js"></script>
+            <script src="/static/js/memoria2.js"></script>
+            <script src="/static/js/memoria.js"></script>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

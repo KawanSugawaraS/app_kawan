@@ -3,6 +3,33 @@
 
 {% block content %}
 
-<h1>About</h1>
+<div class="container">
+    <div class="card-group">
+        <div class="card">
+          <img src="/static/img/img.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ta Te Ti</h5>
+            <p class="card-text">El juego Ta Te Ti es un juego simple, uno con un símbolo X y el otro O deben conseguir colocar su ficha en línea en un tablero de 3×3, dicha línea puede ser horizontal, vertical o diagonal</p>
+            <a class="btn btn-primary" href="/tictactou" role="button">Link</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/static/img/juego-de-memoria.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Juego de Memoria</h5>
+            <p class="card-text">Se colocan todas la fichas boca abajo. El primer jugador levanta 2 fichas, si coinciden y tienen el mismo dibujo, se las lleva y sigue levantando otras dos. Si por el contrario no coinciden las vuelve a dejar en el mismo sitio boca abajo.</p>
+            <a class="btn btn-primary" href="/memoria" role="button">Link</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/static/img/el-ahorcado.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Juego el Ahorcado</h5>
+            <p class="card-text">El ahorcado es un juego en el que el objetivo es adivinar una palabra o frase. Luego el jugador restante (o los jugadores, en turno) deberán ir diciendo letras que les parece que puede contener la frase.</p>
+            <a class="btn btn-primary" href="/ahorcado" role="button">Link</a>
+          </div>
+        </div>
+      </div>
+</div>
 
 {% endblock%}
